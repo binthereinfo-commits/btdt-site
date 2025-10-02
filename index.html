@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bin There, Done That! – Curbside Bin Service</title>
+  <meta name="description" content="Weekly curbside bin service. Fast, simple, reliable. Sheridan & surrounding areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --teal:#48A9A6;          /* calm green‑blue */
+      --sage:#5FB49C;          /* optional accent */
+      --navy:#1F3A44;          /* dark ink from logo style */
+      --beige:#F3EAD9;         /* logo background match */
+      --ink:#0f172a;           /* text */
+    }
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--beige);color:var(--navy);}    
+    a{color:var(--teal);text-decoration:none}
+    a:hover{opacity:.9;text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      background:linear-gradient(180deg, rgba(72,169,166,.14), rgba(72,169,166,.04));
+      border-bottom:1px solid rgba(0,0,0,.06);
+      position:sticky;top:0;backdrop-filter:saturate(120%) blur(6px);
+    }
+    .brand{display:flex;gap:16px;align-items:center}
+    .brand img{width:72px;height:72px;border-radius:12px;object-fit:cover;border:2px solid rgba(0,0,0,.08);background:#fff}
+    .brand h1{font-size:clamp(22px,4vw,28px);margin:0;color:var(--navy)}
+    nav{margin-left:auto;display:flex;gap:18px}
+    nav a{font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+    .hero h2{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:0 0 12px;color:var(--navy)}
+    .hero p{font-size:clamp(16px,2.5vw,18px);margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--teal);color:#07363A;padding:12px 18px;border-radius:12px;font-weight:800;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+    .btn.secondary{background:#fff;color:var(--navy);border:1px solid rgba(0,0,0,.08)}
+
+    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:20px;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+
+    h3{margin:6px 0 10px;font-size:22px}
+    .muted{color:#3b5560}
+    .price{font-weight:800;font-size:28px;color:var(--navy)}
+    .badge{background:var(--sage);color:#08352F;font-weight:700;border-radius:999px;padding:4px 10px;font-size:12px}
+
+    footer{margin-top:40px;padding:26px 0;border-top:1px solid rgba(0,0,0,.06);font-size:14px;color:#3b5560}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;align-items:center;gap:18px">
+      <div class="brand">
+        <!-- Replace src with your logo file once uploaded beside index.html as logo.png -->
+        <img src="logo.png" alt="Bin There, Done That! logo" />
+        <h1>Bin There, Done That!</h1>
+      </div>
+      <nav class="hide-mobile" style="margin-left:auto">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h2>Weekly curbside bin service — fast, simple, reliable.</h2>
+        <p class="muted">Serving Sheridan & surrounding areas. We get your bins to the curb on time and back again if you choose the <span class="badge">Return Bins +$5</span> add‑on.</p>
+        <div class="cta">
+          <!-- Link 1: to your Google Form sign‑up -->
+          <a class="btn" href="#signup" id="signup-link">Sign up in 60 seconds</a>
+          <!-- Link 2: to your Stripe/Square payment link (optional) -->
+          <a class="btn secondary" href="#pay" id="pay-link">Pay your monthly bill</a>
+        </div>
+        <p class="muted" style="margin-top:8px">Have questions? Text or call <strong id="phone">(555) 123‑4567</strong>.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">What we do</h3>
+        <ul>
+          <li>Get your trash/recycle bins curbside on your pickup day</li>
+          <li>Optional: Return bins after pickup (+$5/mo)</li>
+          <li>Simple, predictable billing</li>
+        </ul>
+        <p class="muted" style="font-size:13px">Household trash only. No hazardous/medical/corrosive materials. Place bins accessible by 6:00 AM.</p>
+      </div>
+    </section>
+
+    <section id="how" class="grid cols-3">
+      <div class="card">
+        <h3>1) Sign up</h3>
+        <p>Fill out our quick form with your address, pickup day, and number of bins.</p>
+      </div>
+      <div class="card">
+        <h3>2) We handle pickup</h3>
+        <p>We roll bins out on time, every week. You don’t have to rush it again.</p>
+      </div>
+      <div class="card">
+        <h3>3) (Optional) Return Bins</h3>
+        <p>We return bins after pickup for just <strong>$5/mo</strong> extra.</p>
+      </div>
+    </section>
+
+    <section id="pricing" style="margin-top:26px" class="grid cols-3">
+      <div class="card">
+        <h3>1 Bin</h3>
+        <p class="price">$10<span class="muted">/mo</span></p>
+        <p class="muted">Perfect for small households.</p>
+      </div>
+      <div class="card">
+        <h3>2 Bins</h3>
+        <p class="price">$20<span class="muted">/mo</span></p>
+        <p class="muted">Great for families. Add Return Bins for +$5.</p>
+      </div>
+      <div class="card">
+        <h3>Return Bins Add‑on</h3>
+        <p class="price">+$5<span class="muted">/mo</span></p>
+        <p class="muted">We roll them back after pickup.</p>
+      </div>
+    </section>
+
+    <section id="faq" style="margin-top:26px" class="grid cols-2">
+      <div class="card">
+        <h3>FAQ</h3>
+        <p><strong>What days do you service?</strong><br>We match your city pickup day. Tell us your day on sign‑up.</p>
+        <p><strong>How do I cancel?</strong><br>Reply to any email or text. We ask for 7 days’ notice before the next billing cycle.</p>
+        <p><strong>What about holidays or storms?</strong><br>If schedules shift, we’ll email/text you with updated timing.</p>
+      </div>
+      <div class="card">
+        <h3>Service Area</h3>
+        <p>Sheridan, OR and nearby neighborhoods.</p>
+        <p class="muted" style="font-size:13px">If you’re just outside this area, contact us—we may still be able to help.</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:26px" class="grid cols-2">
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Call/Text: <span id="contact-phone">(555) 123‑4567</span><br>
+        Email: <a id="contact-email" href="mailto:you@example.com">you@example.com</a></p>
+        <p><a id="contact-form" href="#signup">Sign‑up Form</a> • <a id="billing-link" href="#pay">Payment</a></p>
+      </div>
+      <div class="card">
+        <h3>Legal</h3>
+        <p class="muted" style="font-size:14px">Household trash only. No hazardous/medical/corrosive materials. Client provides safe, unobstructed access. Overfilled/contaminated bins may incur a surcharge. Not liable for pre‑existing damage or events beyond reasonable control.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Bin There, Done That! • All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Quick personalization — set these once and it updates the page
+    const SETTINGS = {
+      phone: "(503) 267-5478",                      // <-- change to your number
+      email: "bintherinfo@gmail.com",                      // <-- change to your email
+      signupUrl: "https://docs.google.com/forms/d/e/1FAIpQLSd9ntMapFFOJwQvFEPkxbEuvs249GGhGc9gjDVuEPCgOgrxvw/viewform?usp=sharing&ouid=102888528977526847151", // <-- paste your Google Form link
+      payUrl: "https://checkout.stripe.com/pay/your-link" // <-- paste your payment link (Stripe/Square/PayPal)
+    };
+
+    document.getElementById('phone').textContent = SETTINGS.phone;
+    document.getElementById('contact-phone').textContent = SETTINGS.phone;
+    const emailA = document.getElementById('contact-email');
+    emailA.textContent = SETTINGS.email;
+    emailA.href = `mailto:${SETTINGS.email}`;
+
+    document.getElementById('signup-link').href = SETTINGS.signupUrl;
+    document.getElementById('contact-form').href = SETTINGS.signupUrl;
+    document.getElementById('pay-link').href = SETTINGS.payUrl;
+    document.getElementById('billing-link').href = SETTINGS.payUrl;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
